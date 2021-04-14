@@ -36,15 +36,6 @@ public class IndexController  {
 		model.addAttribute("viewLog",strLog);
 		return "index";
 	}
-//	@Override
-//	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//
-//		ModelAndView mv = new ModelAndView("index");
-//		mv.addObject("data", "IndexController Hello");
-//		return mv;
-//		
-//	}
-	
-	
+
 	
 }

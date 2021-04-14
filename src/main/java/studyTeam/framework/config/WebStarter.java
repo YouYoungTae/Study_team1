@@ -1,9 +1,5 @@
 package studyTeam.framework.config;
 
-import java.util.EnumSet;
-
-import javax.servlet.DispatcherType;
-import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
@@ -11,14 +7,13 @@ import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class WebStarter implements WebApplicationInitializer {
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!");
+
 		setConfiguration(servletContext);
 		registerCharacterEncodingFilter(servletContext);
 	}
@@ -41,7 +36,6 @@ public class WebStarter implements WebApplicationInitializer {
 		
 		dispatcherServlet.setLoadOnStartup(1);
 		dispatcherServlet.addMapping("/");
-		
 	}
 	
 	private void registerCharacterEncodingFilter(ServletContext servletContext) {

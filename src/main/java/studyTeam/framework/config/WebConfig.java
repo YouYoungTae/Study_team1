@@ -1,16 +1,8 @@
 package studyTeam.framework.config;
 
-import java.lang.annotation.Annotation;
-import java.util.List;
-
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -38,6 +30,4 @@ public class WebConfig implements WebMvcConfigurer{
 		registry.addResourceHandler("**").addResourceLocations("/static/");
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 	}
-
-
 }
