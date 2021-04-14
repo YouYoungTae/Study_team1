@@ -1,5 +1,7 @@
 package studyTeam.framework.config;
 
+import java.util.HashMap;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import studyTeam.framework.aspect.LoggingAspect;
 import studyTeam.study.domain.StudyWeek;
 
 @Configuration
@@ -29,7 +32,9 @@ public class AppConfig  {
 	public StudyWeek study1() {
 		return new StudyWeek();
 	}
-
-
 	
+	@Bean("viewLog")
+	public HashMap<String,String>  viewLog() {
+		return new HashMap<String,String>();
+	}
 }

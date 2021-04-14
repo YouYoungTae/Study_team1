@@ -24,6 +24,8 @@
         <jsp:include page="${mainPageNm}" flush="false" />
 
     </div>
-    <footer></footer>
+    <footer style=" height: 200px;">
+    	viewLog:${viewLog}
+    </footer>
 </body>
 </html>

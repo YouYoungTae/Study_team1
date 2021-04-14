@@ -56,7 +56,7 @@
     </aside>
     <main class="pMainFrame" >
         <section id="viewPage" class="pd_A8"   >
-            <article class="toggleView active" style="height:90vh; padding:10px;overflow:auto;">
+            <article class="toggleView active" style="height:80vh; padding:10px;overflow:auto;">
                 <h2>http 개관</h2>
                 <div style="padding-bottom: 20px;   "  >
                     <img src="/img/http_p1.png" alt="page1">
@@ -104,6 +104,8 @@
         </section>
     </main>
     </div>
-    <footer></footer>
+    <footer style=" height: 200px;">
+    	viewLog:${viewLog}
+    </footer>
 </body>
 </html>
