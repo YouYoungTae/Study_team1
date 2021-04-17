@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,12 +31,18 @@ public class StudyController  {
 	MoProxy moProxy;
 	
 	@RequestMapping("/team_pj/list")
-	@GetMapping(path ="week/{weekNum}")
-	public String getList(@PathVariable(name = "weekNum" ,required =false) Integer weekNum ,
+
+	public String getList( @RequestParam(name = "page" ,required = false)  String article,
 			Model model) throws JsonProcessingException	{
 		viewLog.clear();
 		logicService.calcVService();
-		model.addAttribute("mainPageNm","week2/main.jsp");
+		if ( article ==null || article.equals("1")) {
+			model.addAttribute("mainPageNm","week2/main.jsp");
+		}else if (article.equals("2")) {
+			model.addAttribute("mainPageNm","week2/article2.jsp");
+		}else if (article.equals("3")) {
+			model.addAttribute("mainPageNm","week2/article3.jsp");
+		}
 		model.addAttribute("asidePageNm","week2/aside.jsp");
 		
 		ObjectMapper mapper = new ObjectMapper();
@@ -45,7 +52,7 @@ public class StudyController  {
 	}
 	
 	@RequestMapping("/team_pj/proxy")
-	@GetMapping(path ="week/{weekNum}")
+
 	public String proxy(@PathVariable(name = "weekNum" ,required =false) Integer weekNum ,
 			Model model) throws JsonProcessingException	{
 		viewLog.clear();
